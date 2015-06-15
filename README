@@ -1,0 +1,15 @@
+This is the README file for the rfbconnect package.
+
+This software comes with ABSOLUTELY NO WARRANTY.  See the file COPYING for
+details.
+
+The rfbconnect.pl(1) attempts to open a VNC viewer to an RFB service listed
+by an RFB SRV DNS record.  The following environmental variables are
+understood:
+
+    $VNCVIEWER_CMD  The name of the program to invoke as the viewer.
+                    Defaults to 'vncviewer'.
+
+   $VNCVIEWER_OPTS  The options to pass to the vnc viewer program.
+                    Defaults to an empty string.
+

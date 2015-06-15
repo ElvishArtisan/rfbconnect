@@ -2,3 +2,7 @@
 	* Initial package creation.
 2015-06-15 Fred Gleason <fredg@paravelsystems.com>
 	* Added support for $VNCVIEWER_CMD in 'rfbconnect.pl'.
+2015-06-15 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'README'.
+2015-06-15 Fred Gleason <fredg@paravelsystems.com>
+	* Added a build system.
