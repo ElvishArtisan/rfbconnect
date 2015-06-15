@@ -21,8 +21,14 @@
 #
 #  This script attempts to connect to the remote VNC server listed by
 #  the local system's RFB SRV record in DNS by means of vncviewer(1).
-#  Options can be passed to vncviewer(1) by setting $VNCVIEWER_OPTS in
-#  the environment.
+#
+#  The following environmental variables are understood:
+#
+#    $VNCVIEWER_CMD  The name of the program to invoke as the viewer.
+#                    Defaults to 'vncviewer'.
+#
+#   $VNCVIEWER_OPTS  The options to pass to the vnc viewer program.
+#                    Defaults to an empty string.
 #
 
 use Net::DNS;
@@ -60,5 +66,9 @@ my $port=$fields[6];
 #
 # Launch the viewer
 #
-my $cmd="vncviewer ".$ENV{"VNCVIEWER_OPTS"}." ".$hostname.":".$port;
+my $vnc_cmd=$ENV{"VNCVIEWER_CMD"};
+if($vnc_cmd eq "") {
+    $vnc_cmd="vncviewer";
+}
+my $cmd=$vnc_cmd." ".$ENV{"VNCVIEWER_OPTS"}." ".$hostname.":".$port;
 system($cmd);
