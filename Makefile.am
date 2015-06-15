@@ -28,9 +28,12 @@ maintainer-clean-local:
 install-exec-local:	
 	mkdir -p $(DESTDIR)$(prefix)/bin
 	cp rfbconnect.pl $(DESTDIR)$(prefix)/bin/
+	mkdir -p $(DESTDIR)/usr/share/applications
+	cp rfbconnect.desktop $(DESTDIR)/usr/share/applications/
 
 uninstall-exec:
 	rm -f $(DESTDIR)$(prefix)/bin/rfbconnect.pl
+	rm -f $(DESTDIR)/usr/share/applications/rfbconnect.desktop
 
 rpm:	dist
 	mkdir -p $(HOME)/rpmbuild/SOURCES
@@ -46,6 +49,7 @@ EXTRA_DIST = autogen.sh\
              get_distro.sh\
              get_target.sh\
              PACKAGE_VERSION\
+             rfbconnect.desktop\
              rfbconnect.pl\
              rfbconnect.spec.in
 

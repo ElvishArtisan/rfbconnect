@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Terminal=false
+Name=RFBConnect
+GenericName=VNC Server Connection
+Exec=rfbconnect.pl
+Type=Application
+Terminal=false

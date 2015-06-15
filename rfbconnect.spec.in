@@ -55,6 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %{_bindir}/rfbconnect.pl
+%{_datadir}/applications/rfbconnect.desktop
 %doc AUTHORS
 %doc ChangeLog
 %doc COPYING 
